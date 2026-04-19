@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLCC</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      position: relative;
+    }
+
+    .center {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      width: min(300px, 70vw);
+      height: min(300px, 70vw);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .footer-canvas-wrap {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 30px;
+      pointer-events: none;
+    }
+
+    #footerCanvas {
+      display: block;
+      width: 100%;
+      height: 30px;
+    }
+
+    @media (max-width: 420px) {
+      .footer-canvas-wrap,
+      #footerCanvas {
+        height: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="center">
+    <div class="logo" aria-label="GLCC Logo">
+      <svg xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 1350 1065"
+           preserveAspectRatio="xMidYMid meet"
+           role="img"
+           aria-hidden="true">
+        <g transform="translate(0.000000,1065.000000) scale(0.100000,-0.100000)"
+           fill="#000000" stroke="none">
+          <path d="M3760 9409 c-291 -21 -629 -104 -910 -224 -445 -189 -862 -509 -1158 -889 -54 -69 -12 -39 116 86 253 244 545 438 842 558 30 12 66 26 80 32 145 59 389 119 606 148 319 43 725 15 1025 -70 125 -35 133 -38 169 -51 535 -190 974 -519 1305 -978 36 -50 65 -92 65 -95 0 -2 16 -28 36 -58 69 -104 202 -389 247 -533 106 -332 137 -523 137 -845 0 -268 -19 -420 -85 -680 -218 -856 -894 -1571 -1745 -1847 -497 -161 -1013 -172 -1535 -33 -60 16 -135 39 -165 50 -30 12 -66 25 -80 29 -28 9 -99 41 -225 102 -243 116 -487 292 -699 502 -60 59 -111 105 -114 103 -6 -6 80 -117 147 -191 201 -219 448 -421 681 -557 232 -136 441 -226 705 -302 33 -10 74 -22 90 -27 151 -44 372 -70 646 -76 263 -5 395 4 604 43 232 43 577 158 754 251 135 72 202 110 254 145 32 21 61 38 63 38 3 0 58 39 122 87 193 145 344 285 488 453 42 50 80 90 85 90 5 0 9 -282 9 -641 0 -729 -4 -788 -81 -1094 -55 -220 -165 -489 -278 -675 -11 -19 -24 -42 -28 -50 -12 -26 -113 -169 -181 -258 -81 -106 -307 -335 -419 -422 -260 -206 -455 -314 -803 -444 -122 -46 -301 -88 -490 -117 -201 -30 -554 -30 -745 0 -272 42 -444 90 -670 186 -145 62 -186 84 -335 173 -202 121 -347 237 -532 424 -60 60 -108 104 -108 98 0 -6 6 -18 13 -25 6 -8 17 -20 22 -27 227 -293 497 -531 820 -723 273 -163 542 -268 895 -349 398 -91 924 -78 1330 32 92 24 333 102 370 118 19 9 49 22 65 29 362 161 646 357 917 631 253 257 400 463 565 796 58 118 63 130 132 333 64 188 85 271 124 495 l22 125 0 1755 0 1755 -23 135 c-13 74 -32 171 -43 215 -12 44 -25 96 -29 115 -5 19 -20 72 -35 118 -197 619 -605 1165 -1148 1536 -38 25 -70 46 -72 46 -2 0 -23 13 -47 29 -160 106 -437 231 -664 299 -171 51 -245 68 -442 102 -151 27 -446 35 -662 19z"/>
+          <path d="M7551 9406 c-9 -10 -11 -409 -9 -1607 4 -1763 -1 -1619 69 -1924 117 -507 351 -953 700 -1333 95 -103 222 -221 329 -307 68 -54 254 -186 280 -198 8 -4 29 -16 45 -26 152 -98 417 -217 610 -276 337 -102 579 -140 895 -140 340 0 610 46 959 162 74 25 164 58 200 75 116 52 305 149 349 179 24 16 45 29 47 29 18 0 300 209 385 285 179 161 422 435 385 435 -2 0 -57 -52 -121 -116 -298 -295 -653 -512 -1049 -642 -107 -36 -173 -52 -365 -92 -80 -16 -350 -40 -458 -40 -260 0 -613 56 -832 133 -117 41 -326 128 -364 152 -12 7 -52 29 -90 49 -200 106 -390 250 -582 441 -183 183 -277 302 -431 550 -21 33 -117 226 -143 285 -96 223 -154 439 -195 722 -13 92 -15 314 -15 1650 0 1188 -3 1547 -12 1556 -19 19 -571 17 -587 -2z"/>
+          <path d="M3490 8960 c-193 -13 -472 -68 -610 -121 -30 -11 -66 -24 -80 -29 -174 -57 -476 -225 -655 -365 -172 -135 -399 -373 -505 -530 -18 -27 -46 -68 -60 -90 -122 -180 -242 -454 -313 -715 -108 -393 -102 -897 14 -1295 11 -38 22 -79 25 -90 4 -11 12 -34 20 -52 8 -17 14 -35 14 -40 0 -36 128 -301 214 -442 190 -312 501 -623 822 -822 53 -33 242 -131 319 -165 169 -75 419 -144 650 -179 151 -23 506 -20 672 4 343 51 706 181 941 336 30 19 55 35 58 35 13 0 167 114 259 193 162 138 368 358 347 371 -5 3 -15 -3 -24 -12 -82 -92 -269 -249 -393 -331 -287 -189 -536 -288 -895 -353 -167 -30 -554 -31 -716 0 -187 35 -355 80 -449 121 -11 5 -40 17 -65 27 -83 33 -264 129 -351 186 -368 240 -682 615 -844 1004 -51 123 -60 147 -89 244 -107 357 -119 791 -30 1160 115 481 393 917 785 1233 57 46 226 162 265 183 11 6 50 27 85 46 58 31 240 111 329 143 98 35 189 58 365 92 133 25 568 25 715 0 390 -69 711 -209 1019 -445 85 -65 111 -88 224 -195 142 -135 34 17 -121 170 -151 149 -354 307 -500 389 -197 111 -300 157 -487 219 -293 96 -629 136 -955 115z"/>
+          <path d="M8840 5004 c0 -30 255 -292 390 -400 103 -83 236 -177 315 -222 60 -34 305 -153 334 -162 14 -5 51 -18 81 -30 186 -73 510 -135 775 -147 270 -13 715 65 960 167 17 7 46 19 65 27 307 128 599 331 837 581 93 97 101 108 85 120 -13 10 -77 12 -293 10 l-276 -3 -84 -79 c-219 -206 -472 -354 -809 -475 -269 -96 -664 -135 -972 -95 -236 30 -413 79 -648 179 -216 92 -457 256 -656 447 -85 82 -104 97 -104 82z"/>
+          <path d="M5509 1974 c-244 -228 -501 -387 -809 -499 -405 -147 -935 -165 -1345 -45 -38 12 -83 25 -100 30 -101 29 -341 137 -453 205 -118 71 -281 195 -388 293 l-66 62 -283 0 c-169 0 -286 -4 -290 -10 -14 -23 250 -283 415 -407 55 -41 187 -128 225 -149 11 -5 55 -29 97 -52 377 -206 858 -309 1307 -281 305 20 569 80 816 188 311 135 547 294 787 530 130 127 206 216 195 227 -3 3 -51 -39 -108 -92z"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="footer-canvas-wrap">
+    <canvas id="footerCanvas"></canvas>
+  </div>
+
+  <script>
+    (function () {
+      // Base64 von:
+      // G.L. Capital & Consulting UG | Lückstr. 24 | 10317 Berlin | Gf. Marian Klee | contact@glcc.berlin
+      const encoded = "Ry5MLiBDYXBpdGFsICYgQ29uc3VsdGluZyBVRyB8IEzDvGNrc3RyLiAyNCB8IDEwMzE3IEJlcmxpbiB8IEdmLiBNYXJpYW4gS2xlZSB8IGNvbnRhY3RAZ2xjYy5iZXJsaW4=";
+
+      function fitCanvasToCSS(canvas) {
+        const dpr = Math.max(window.devicePixelRatio || 1, 1);
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = Math.round(rect.width * dpr);
+        canvas.height = Math.round(rect.height * dpr);
+        const ctx = canvas.getContext("2d");
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        return ctx;
+      }
+
+      function decodeBase64Unicode(str) {
+        return decodeURIComponent(
+          Array.prototype.map.call(atob(str), function (c) {
+            return "%" + c.charCodeAt(0).toString(16).padStart(2, "0");
+          }).join("")
+        );
+      }
+
+      function drawFooter() {
+        const canvas = document.getElementById("footerCanvas");
+        const ctx = fitCanvasToCSS(canvas);
+        const w = canvas.getBoundingClientRect().width;
+        const h = canvas.getBoundingClientRect().height;
+        const text = decodeBase64Unicode(encoded);
+
+        ctx.clearRect(0, 0, w, h);
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillStyle = "#b8b8b8";
+        ctx.font = (window.innerWidth <= 420 ? 9 : 10) + 'px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif';
+        ctx.fillText(text, w / 2, h / 2, w - 16);
+      }
+
+      window.addEventListener("resize", drawFooter, { passive: true });
+      drawFooter();
+    })();
+  </script>
+
+</body>
+</html>
